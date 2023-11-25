@@ -1,0 +1,183 @@
+---
+title: 'Stats 250: Lab 9 Assignment'
+author: "Instructional Team"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Instructions
+
+Complete the lab exercises and Dive Deeper questions below. Lab exercises will be graded out of 2 points each and the Dive Deeper questions will be graded out of 3 points each - all of them will be graded for *correctness*. Upon completion, follow the submission instructions at the bottom of this document. We strongly encourage you to work on this assignment with a partner, but each student must submit their own lab assignment.
+
+
+***
+
+
+### Background
+
+Coffee cupping, or coffee tasting, is the practice of observing the tastes and aromas of brewed coffee. It is a professional practice but can be done informally by anyone or by professionals known as "Q Graders". A standard coffee cupping procedure involves deeply sniffing the coffee, then loudly slurping the coffee so it spreads to the back of the tongue. The coffee taster attempts to measure aspects of the coffee's taste, specifically the body (the texture or mouth feel, such as oiliness), sweetness, acidity (a sharp and tangy feeling, like when biting into an orange), flavor (the characters in the cup), and aftertaste. 
+
+The data set `coffee` contains these measured qualities (and other variables) for a random sample of 37 coffees. In the following questions, we will analyze which of these qualities has the strongest relationship with the overall rating (`rating`) - this will be the response of our analysis. The variables in the data set include:
+
+- `rating`: the total rating (in points) on a scale of 0 - 100
+- `aroma`: the aroma grade (in points) on a scale of 0 - 10
+- `flavor`: the flavor grade (in points) on a scale of 0 - 10
+- `aftertaste`: the aftertaste grade (in points) on a scale of 0 - 10
+- `acidity`: the acidity grade (in points) on a scale of 0 - 10
+- `body`: the body grade (in points) on a scale of 0 - 10
+- `altitude`: the altitude (in meters) of where the coffee bean originates
+
+Use the following code chunk to read in the data set. 
+
+```{r read_data}
+coffee <- read.csv("coffee_ratings.csv")
+```
+
+You can preview the data below.
+
+```{r preview_data}
+head(coffee)
+```
+
+And load in any necessary packages.
+
+```{r load_packages}
+library(ggplot2)
+```
+
+
+***
+
+
+### Lab Exercises
+
+After reading the background above, complete the following lab exercises. Remember, these exercises are worth 2 points each and are graded for correctness.
+
+> **1.** Using `ggplot()`, create a scatterplot of total rating (`rating`) versus flavor grade (`flavor`). Remember that total rating will be the response variable throughout this analysis. Be sure to include appropriate axis labels and an appropriate title. Using the scatterplot, comment on the relationship (in terms of strength, direction, form, and outliers). 
+
+```{r exercise1, error = T}
+# Replace this comment with your code
+
+```
+
+*Answer:* Replace this text with your answer.
+
+
+
+> **2.** Using `ggplot()`, create a scatterplot of total rating (`rating`) versus body grade (`body`). Remember that total rating will be the response variable throughout this analysis. Be sure to include appropriate axis labels and an appropriate title. Using the scatterplot, comment on the relationship (in terms of strength, direction, form, and outliers). 
+
+```{r exercise2, error = T}
+# Replace this comment with your code
+
+```
+
+*Answer:* Replace this text with your answer. 
+
+
+
+> **3.** Calculate the correlation for the two linear relationships in Exercise 1 and 2. Based on the scatterplots and these correlation coefficients, does flavor grade or body grade appear to be a better linear predictor of total rating?
+
+```{r exercise3a, error = T}
+# Replace this comment with your code
+
+```
+
+```{r exercise3b, error = T}
+# Replace this comment with your code
+
+```
+
+*Answer:* Replace this text with your answer.
+
+
+
+> **4.** Create and store a linear regression model (`lm_coffee`) that predicts total rating (`rating`) using flavor grade (`flavor`). Pass this model through the `summary()` function. Provide an interpretation of the slope estimate (b1) within context. 
+
+```{r exercise4, error = T}
+# Replace this comment with your code
+
+```
+
+*Answer:* Replace this text with your answer.
+
+
+
+> **5.** Using the output from Exercise 4, provide an interpretation of the R-squared value within context. 
+
+*Answer:* Replace this text with your answer. 
+
+
+
+> **6.** Create the residual plot for the linear model you created in Exercise 4. Below the plot, state the two assumptions that the plot is checking. Note: you do not have to comment on whether or not the assumptions appear to be reasonably met from the plot. 
+
+```{r exercise6, error = T}
+# Replace this comment with your code
+
+```
+
+*Assumption:* Replace this text with your answer.
+
+*Assumption:* Replace this text with your answer.
+
+
+
+> **7.** Create the QQ plot of the residuals for the linear model you created in Exercise 4. Below the plot, state the assumption that the plot is checking. Note: you do not have to comment on whether or not the assumption appears to be reasonably met from the plot. 
+
+```{r exercise7, error = T}
+# Replace this comment with your code
+
+```
+
+*Assumption:* Replace this text with your answer.
+
+
+
+***
+
+
+
+### Dive Deeper Questions
+
+After completing the lab exercises above, complete the following Dive Deeper questions. Remember, these questions are worth 3 points each and are graded for correctness.
+
+> **1.** In Exercise 4, the p-value for flavor grade was found to be 1.89e-11. Complete the following sentence *within context*. Based on the sample data, we have very strong evidence to suggest...
+
+**Answer:** Replace this text with your answer.
+
+
+
+> **2.** If someone asked you to predict the total rating for a coffee who has a flavor grade of 9.6, explain why you should be cautious to use the regression model you created in Exercise 4 to do this. Some helpful numerical summaries for the explanatory variable (`flavor`) can be obtained by running the code chunk below.  
+
+```{r dive_deeper_2, error = T}
+summary(coffee$flavor)
+```
+
+**Answer:** Replace this text with your answer.
+
+
+***
+
+
+### Submission Instructions
+
+Once you have finished, follow the instructions below to submit your work.
+
+1. At the top of the document, update the `author` field. *Do not change anything else at the top of the document.*
+
+2. Click the Knit button to create an HTML file of your work.
+
+3. In the Files pane (bottom right window), check the box next to `lab09_assignment.html`. 
+
+4. In the Files pane, click on the gear icon (More) and select "Export..."
+
+5. Do not change the file name (`lab09_assignment.html`). Click Download and save the file to your computer. 
+
+6. On the Stats 250 Canvas site, navigate to the Lab 8 assignment. 
+
+7. Upload your saved `lab09_assignment.html` file. 
+
+8. Click "Submit Assignment". Congratulations, you are done with Lab 9!
